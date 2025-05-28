@@ -1,4 +1,4 @@
 import translate
 
 def cevir():
-    metin
+    metin =str(input("ÇEVİRMEK İSTEDİĞİNİZ METNİ GİRİN:"))
