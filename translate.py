@@ -13,3 +13,9 @@ def cevir():
         translator=translate.Translator(from_lang="tr",to_lang="uz")
         translation=translator.translate(metin)
         print(translation)
+
+    elif dil==3:
+        translator=translate.Translator(from_lang="tr",to_lang="ja")
+        translation=translator.translate(metin)
+        print(translation)
+cevir()
