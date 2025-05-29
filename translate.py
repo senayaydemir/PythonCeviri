@@ -8,3 +8,8 @@ def cevir():
         translator=translate.Translator(from_lang="tr",to_lang="ko")
         translation=translator.translate(metin)
         print(translation)
+
+    elif dil==2:
+        translator=translate.Translator(from_lang="tr",to_lang="uz")
+        translation=translator.translate(metin)
+        print(translation)
