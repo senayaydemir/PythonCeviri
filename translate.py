@@ -1,21 +1,19 @@
-import translate
+from deep_translator import GoogleTranslator
 
 def cevir():
-    metin =str(input("ÇEVİRMEK İSTEDİĞİNİZ METNİ GİRİN:"))
-    dil=int(input("Hangi Dile Çevirmek İstiyorsunuz?\n1-Korece\n2-Özbekçe\n3-Japonca"))
+    metin = input("ÇEVİRMEK İSTEDİĞİNİZ METNİ GİRİN: ")
+    dil = int(input("Hangi Dile Çevirmek İstiyorsunuz?\n1-Korece\n2-Özbekçe\n3-Japonca\nSeçiminiz: "))
 
-    if dil ==1:
-        translator=translate.Translator(from_lang="tr",to_lang="ko")
-        translation=translator.translate(metin)
-        print(translation)
+    diller = {
+        1: "korean",
+        2: "uzbek",
+        3: "japanese"
+    }
 
-    elif dil==2:
-        translator=translate.Translator(from_lang="tr",to_lang="uz")
-        translation=translator.translate(metin)
-        print(translation)
+    if dil in diller:
+        ceviri = GoogleTranslator(source='turkish', target=diller[dil]).translate(metin)
+        print("Çeviri:", ceviri)
+    else:
+        print("Geçersiz seçim yaptınız.")
 
-    elif dil==3:
-        translator=translate.Translator(from_lang="tr",to_lang="ja")
-        translation=translator.translate(metin)
-        print(translation)
 cevir()
